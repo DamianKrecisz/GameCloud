@@ -1,0 +1,20 @@
+.check-with-label:checked + .label-for-check {
+  font-weight: bold;
+}
+.c-p {
+  cursor: pointer;
+}
+
+.p-15 {
+  padding: 15px;
+}
+.cloud {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  padding: 1%;
+  input {
+    display: none;
+  }
+}

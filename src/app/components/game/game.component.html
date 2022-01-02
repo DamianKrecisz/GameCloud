@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>{{ randomQuestion.question }}</h1>
+  <div class="cloud" [class]="answersVisible ? 'disableClick' : ''">
+    <ng-container
+      *ngFor="let item of randomQuestion.all_words; let i = index"
+      class="cloud_words c-p"
+    >
+    <div [style.marginTop.%]="prop[i].marginTop" class="p-15">
+
+      <input
+        class="check-with-label"
+        id="model{{ item }}"
+        [(ngModel)]="model[item]"
+        type="checkbox"
+        [checked]="false"
+      />
+
+        <label
+          class="label-for-check p-15 c-p"
+          for="model{{ item }}"
+          [ngStyle]="
+            answersVisible
+              ? model[item] === true && countScore(item)
+                ? {
+                    color: 'green'
+                  }
+                : model[item] === true
+                ? { color: 'red' }
+                : { color: 'black' }
+              : ''
+          "
+        >
+          <ng-container *ngIf="answersVisible">
+            <ng-container *ngIf="model[item] === true && countScore(item)">
+              <p class="good">GOOD</p>
+            </ng-container>
+            <ng-container *ngIf="model[item] === true && !countScore(item)">
+              <p class="bad">BAD</p>
+            </ng-container>
+          </ng-container>
+          <p>{{ item }}</p>
+        </label>
+      </div>
+    </ng-container>
+  </div>
+  <button (click)="showAnswers()" *ngIf="!answersVisible">check answers</button>
+  <button (click)="finishGame()" *ngIf="answersVisible">finish game</button>
+</div>

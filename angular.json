@@ -123,6 +123,11 @@
           }
         }
       }
-    }},
-  "defaultProject": "game"
+    }
+  },
+  "defaultProject": "game",
+  "cli": {
+    "analytics": "28f46e72-536c-43cd-b3ae-05f47cc550fc",
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
