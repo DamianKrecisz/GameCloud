@@ -5,10 +5,16 @@
   cursor: pointer;
 }
 
+.div-style {
+  padding: 15px;
+  position: relative;
+  height: 15px;
+}
 .p-15 {
   padding: 15px;
 }
 .cloud {
+  height: 50vh;
   border: 1px solid black;
   border-radius: 5px;
   display: flex;

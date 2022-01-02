@@ -29,7 +29,7 @@ export class GameComponent implements OnInit {
         this.randomQuestion = questions[_.random(questions.length - 1)];
         this.correctAnswers = _.cloneDeep(this.randomQuestion.good_words);
         this.randomQuestion.all_words.forEach(() => {
-          this.prop.push({ marginTop: _.random(80) });
+          this.prop.push({ top: _.random(80) });
         });
       });
   }
